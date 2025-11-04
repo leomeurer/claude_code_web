@@ -1,0 +1,27 @@
+# Exchange Connectors
+ccxt>=4.0.0
+
+# Data Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Technical Indicators
+pandas-ta>=0.3.14b
+
+# Async Support
+aiohttp>=3.9.0
+
+# Configuration
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Logging
+loguru>=0.7.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Utilities
+requests>=2.31.0
+websockets>=12.0

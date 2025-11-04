@@ -1,0 +1,74 @@
+# Crypto Trading System Configuration
+
+# Exchange Configuration
+exchange:
+  name: binance
+  testnet: true
+  sandbox: true
+  rate_limit: true
+
+# Trading Pairs
+trading:
+  pairs:
+    - BTC/USDT
+    - ETH/USDT
+  timeframe: 1h  # Candlestick timeframe: 1m, 5m, 15m, 1h, 4h, 1d
+
+# Strategy Configuration
+strategy:
+  name: moving_average_crossover
+  parameters:
+    fast_period: 10
+    slow_period: 30
+    rsi_period: 14
+    rsi_overbought: 70
+    rsi_oversold: 30
+
+# Risk Management
+risk:
+  max_position_size_percent: 10  # Maximum 10% of portfolio per trade
+  stop_loss_percent: 2.0  # 2% stop loss
+  take_profit_percent: 5.0  # 5% take profit
+  max_daily_loss_percent: 5.0  # Stop trading if daily loss exceeds 5%
+  trailing_stop: true
+  trailing_stop_percent: 1.5
+
+# Portfolio
+portfolio:
+  initial_capital: 10000  # Initial capital in USDT
+  reserve_percent: 10  # Keep 10% in reserve
+
+# Data Collection
+data:
+  historical_days: 30  # Days of historical data to fetch
+  update_interval: 60  # Update interval in seconds
+  save_to_file: true
+  data_directory: data
+
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: logs/trading.log
+  console: true
+
+# Notifications (optional)
+notifications:
+  enabled: false
+  telegram:
+    enabled: false
+    bot_token: ""
+    chat_id: ""
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    sender: ""
+    receiver: ""
+    password: ""
+
+# Backtesting
+backtesting:
+  enabled: false
+  start_date: "2024-01-01"
+  end_date: "2024-12-31"
+  initial_capital: 10000
